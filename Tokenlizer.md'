@@ -1,0 +1,84 @@
+Tokenizer 分词器
+three way of teokenizer: word level, char level, subword level 
+
+BPE 字节对编码
+used by GPT,  BART 
+
+具体方法：
+take every char as a token →
+count the frequency of every two adjacent  token →
+merge the two token with highest frequency as the new token →
+count the frequency of every two adjacent  token  →
+merge the two token with highest frequency as the new token ( do not delete existing combination) →
+repeat this process 
+
+
+WordPiece 
+used by BERT 
+
+具体方法：
+take every char as a token →
+count  two token’s score →
+score=(freq_of_pair) / (freq_of_first_element×freq_of_second_element)
+or 
+score = log(freq_of_pair) - (  log(freq_of_first_element) + (freq_of_second_element) )  → 
+merge the two token with highest score as new token →
+repeat 
+
+Unigram 
+构造词汇表：
+count frequency of every char →
+calculte probability of each token : #token / # total →
+P(a,b,c) = P(a) * P(b) * P(c)
+P(ab, c) = P(ab) * P(c)
+P(a, bc) = P(a) * P(bc) 
+P(abc) = max ( P(a,b,c), P(ab, c), P(a, bc)) #如果相同，选择第一个
+
+
+删除Token：
+
+假设我们经过上一步，已经对每一个word进行了分词,得到如下的分词和得分。
+"hug": ["hug"] (score 0.071428)
+"pug": ["pu", "g"] (score 0.007710)
+"pun": ["pu", "n"] (score 0.006168)
+"bun": ["bu", "n"] (score 0.001451)
+"hugs": ["hug", "s"] (score 0.001701)
+
+注意: 上述的tokenizer省略了每一个字母character，比如，"hug"的分词是["h","u","g","hug"]，但是为了简化，我们省略了["h","u","g"].
+现在就是计算每个token对整体的影响了，这个影响loss就是这些score的负对数似然 negative log likelihood.
+
+初始loss就是：
+10∗(−log(0.071428))+5∗(−log(0.007710))+12∗(−log(0.006168))+4∗(−log(0.001451))+5∗(−log(0.001701))=169.8
+
+假设我们要去除的token是'hug',那么，受影响的是hug的分词和hugs的分词，我们可以更新'hug'后新token表的score:
+
+"hug": ["hu", "g"] (score 0.006802)
+"hugs": ["hu", "gs"] (score 0.001701)
+
+loss的变化为：
+hug：−10∗(−log(0.071428))+10∗(−log(0.006802))=23.5
+hugs：−5∗(−log(0.001701))+5∗(−log(0.001701))=0
+
+总变化为23.5.
+
+→ iterate all token until find the min and delete it 
+→ repeat 
+
+SentencePiece:
+established by BPE
+
+cutting sentence into smaller pieces → merge 
+
+Unicode:
+used for other language like Chinese for tokenlizer 
+
+BBPE:
+BBPE的核心思想是将文本中的字符对（UTF-8编码中是字节对）进行合并，以形成常见的词汇或字符模式，直到达到预定的词汇表大小或者无法继续合并为止。
+
+它和BPE的区别在于，BPE是基于字符级别character的，而BBPE是基于字节byte级别的。
+
+BBPE具有如下的优点：
+
+跨语言通用性：由于它基于字节级别，因此可以更容易地跨不同语言和脚本进行迁移；
+减少词汇表大小：通过合并字节对，BBPE可以生成更通用的子词单元，从而减少词汇表的大小；
+处理罕见字符OOV问题：BBPE可以更有效地处理罕见字符，因为它不会为每个罕见字符分配单独的词汇表条目，而是将它们作为字节序列处理
