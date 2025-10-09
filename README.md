@@ -1,6 +1,7 @@
 # LLM Learning Notes
 
 本仓库用于记录学习 Large Language Models (LLMs) 过程中的笔记
+[English Version](./README_EN.md)
 
 email:kerwinish@gmail.com
 
