@@ -1,3 +1,7 @@
+
+[中文](./lora微调的参数怎么选择，lora和Qlora的区别.md) |
+[English](./LoRA&QLoRAHyperparameterConfigurationandPracticalGuide.md)
+
 # LoRA 与 QLoRA 超参数配置与实践总结
 
 ## 一、LoRA 与 QLoRA 概述
