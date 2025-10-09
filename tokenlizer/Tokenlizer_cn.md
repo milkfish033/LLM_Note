@@ -1,3 +1,7 @@
+
+[中文](./Tokenlizer_cn.md) |
+[English](./Tokenlizer_en.md)
+
 # Tokenizer 分词器
 
 ## 三种常见分词方式
