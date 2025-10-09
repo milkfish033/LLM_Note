@@ -1,3 +1,7 @@
+
+[中文](./Transformer中为什么使用LayerNorm而不是BatchNorm.md) |
+[English](./WhyLayerNormInTransformer.md)
+
 # LayerNorm
 
 ## 基本思想
