@@ -1,3 +1,5 @@
+[中文](./What's_user_prompt_and_system_prompt_cn.md) |
+[English](./What's_user_prompt_and_system_prompt.md)
 
 # Understanding User Prompt and System Prompt in Machine Learning
 
