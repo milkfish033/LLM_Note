@@ -6,7 +6,7 @@ This repository is for recording notes during the learning process of **Large La
 
 Email: kerwinish@gmail.com
 
-🚩 Latest Update: 8/10/2025
+🚩 Latest Update: 10/10/2025
 
 ## Table of Contents
 
