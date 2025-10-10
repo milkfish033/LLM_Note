@@ -17,3 +17,4 @@ Email:kerwinish@gmail.com
 5. Transformer中为什么使用LayerNorm而不是BatchNorm
 6. lora微调(Qwen based with LlamaFactory)
 7. lora微调的参数怎么选择, lora和Qlora的区别是什么
+8. 系统输入和用户输入的区别是什么
