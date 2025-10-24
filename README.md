@@ -6,7 +6,7 @@
 
 Email:kerwinish@gmail.com
 
-🚩最近更新 10/22/2025
+🚩最近更新 10/23/2025
 
 ## 目录
 
@@ -19,3 +19,4 @@ Email:kerwinish@gmail.com
 7. lora微调的参数怎么选择, lora和Qlora的区别是什么
 8. 系统输入和用户输入的区别是什么
 9. 决策树
+10. 机器学习论文理解（附笔记）
