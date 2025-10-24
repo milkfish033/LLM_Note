@@ -6,17 +6,45 @@ This repository is for recording notes during the learning process of **Large La
 
 Email: kerwinish@gmail.com
 
-🚩 Latest Update: 10/23/2025
+🚩 Latest Update: 10/24/2025
 
 ## Table of Contents
 
-1. Tokenizer  
-2. What is an activation function, and what types of activation functions are there  
-3. LayerNorm  
-4. MLA in Deepseek v2  
-5. Why Transformer uses LayerNorm instead of BatchNorm  
-6. LoRA fine-tuning (Qwen-based with LLaMA Factory)  
-7. How to choose LoRA fine-tuning parameters and what is the difference between LoRA and QLoRA
-8. User_Prompt vs System_prompt (interview*)
-9. Decision Tree
-10. Machine Learning Essay Reading(with notes)
+LLM_NOTE/
+├── DecisionTree/
+│   ├── DecisionTreeCn.md
+│   └── DecisionTreeEn.md
+│
+├── Essay_reading/
+│   ├── Bert_note_cn.md
+│   ├── Bert_note_en.md
+│   └── Bert.pdf
+│
+├── images/
+│   ├── GLU.jpg
+│   └── SwiGLU.jpg
+│
+├── lora/
+│   ├── LoRA&QLoRAHyperparameterConfiguration.md
+│   ├── lora微调.pdf
+│   └── lora微调的参数怎么选择，lora和Qlora的区别.md
+│
+├── tokenizer/
+│   ├── Tokenlizer_cn.md
+│   └── Tokenlizer_en.md
+│
+├── UserPromptAndSystemPrompt/
+│   ├── What's_user_prompt_and_system_prompt_cn.md
+│   └── What's_user_prompt_and_system_prompt_en.md
+│
+├── WhyLayerNormInTransformer/
+│   ├── Transformer中为什么使用LayerNorm而不是BatchNorm.md
+│   └── WhyLayerNormInTransformer.md
+│
+├── LICENSE
+├── MLA_in_Deepseekv2.md
+├── README_EN.md
+├── README.md
+├── 什么是激活函数，常见的激活函数有哪些.md
+├── 归一化和标准化.md
+└── 面试问题整理.md
