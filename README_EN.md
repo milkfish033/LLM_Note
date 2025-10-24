@@ -6,7 +6,7 @@ This repository is for recording notes during the learning process of **Large La
 
 Email: kerwinish@gmail.com
 
-🚩 Latest Update: 10/22/2025
+🚩 Latest Update: 10/23/2025
 
 ## Table of Contents
 
@@ -19,3 +19,4 @@ Email: kerwinish@gmail.com
 7. How to choose LoRA fine-tuning parameters and what is the difference between LoRA and QLoRA
 8. User_Prompt vs System_prompt (interview*)
 9. Decision Tree
+10. Machine Learning Essay Reading(with notes)
