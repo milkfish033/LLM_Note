@@ -2,15 +2,22 @@
 
 本仓库用于记录学习机器学习中的笔记，分享面试经验
 
-[🇨🇳 中文](./README.md) | [🇺🇸 English](./README_EN.md)
+[中文](./README.md) | [English](./README_EN.md)
 
 Email:kerwinish@gmail.com
 
-🚩最近更新 10/24/2025
+🚩最近更新 10/26/2025
 
 ## 目录
 ```
 LLM_NOTE/
+├── Agent_notes_of_Deeplearning_Andrew/
+│   ├── AG_images/
+│   │   ├── module1/
+│   │   │   └── image.png
+│   │
+│   └── Module1_Introduction.md
+|
 ├── DecisionTree/
 │   ├── DecisionTreeCn.md
 │   └── DecisionTreeEn.md
@@ -55,6 +62,7 @@ LLM_NOTE/
 
 | 分类 | 内容简介 |
 |------|-----------|
+| **Agent_notes_of_Deeplearning_Andrew** | 吴恩达Agent课程学习笔记 |
 | **DecisionTree** | 决策树相关概念、实现与可视化笔记 |
 | **Essay_reading** | 学术论文阅读笔记（如BERT） |
 | **images** | 配图资源（GLU、SwiGLU等） |
@@ -71,6 +79,7 @@ LLM_NOTE/
 - 参数高效微调（PEFT / LoRA / QLoRA）  
 - Tokenizer机制与Prompt设计  
 - 机器学习算法基础与数值稳定性  
+- Agent原理与实践
 
 ---
 

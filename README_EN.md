@@ -2,15 +2,22 @@
 
 This repository is for recording notes during the learning process of **Large Language Models (LLMs)**.  
 
-[🇨🇳 中文](./README.md) | [🇺🇸 English](./README_EN.md)
+[中文](./README.md) | [English](./README_EN.md)
 
 Email: kerwinish@gmail.com
 
-🚩 Latest Update: 10/24/2025
+🚩 Latest Update: 10/26/2025
 
 ## Table of Contents
 ```
 LLM_NOTE/
+├── Agent_notes_of_Deeplearning_Andrew/
+│   ├── AG_images/
+│   │   ├── module1/
+│   │   │   └── image.png
+│   │
+│   └── Module1_Introduction.md
+|
 ├── DecisionTree/
 │   ├── DecisionTreeCn.md
 │   └── DecisionTreeEn.md
@@ -54,6 +61,7 @@ LLM_NOTE/
 
 | Category | Description |
 |-----------|--------------|
+| **Agent_notes_of_Deeplearning_Andrew** | Andrew Ng’s Agent course study notes |
 | **DecisionTree** | Notes on decision tree concepts, implementations, and visualizations. |
 | **Essay_reading** | Academic paper reading notes (e.g., BERT). |
 | **images** | Image resources such as GLU and SwiGLU diagrams. |
@@ -70,6 +78,7 @@ LLM_NOTE/
 - **Parameter-efficient fine-tuning** techniques (PEFT / LoRA / QLoRA)  
 - **Tokenizer mechanisms** and **prompt design** strategies  
 - Fundamentals of **machine learning algorithms** and **numerical stability**
+- AI Agent 
 
 ---
 
