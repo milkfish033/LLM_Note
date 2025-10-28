@@ -6,17 +6,26 @@
 
 Email:kerwinish@gmail.com
 
-🚩最近更新 10/26/2025
+🚩最近更新 10/28/2025
 
 ## 目录
 ```
 LLM_NOTE/
+│
 ├── Agent_notes_of_Deeplearning_Andrew/
+│   │
 │   ├── AG_images/
 │   │   ├── module1/
-│   │   │   └── image.png
+│   │   │   ├── degree_of_autonomy.png
+│   │   │   ├── Planning.png
+│   │   │   └── Reflection.png
+│   │   │
+│   │   └── module2/
+│   │       ├── reflection_demo.png
+│   │       └── Reflection_with_external_feedback.png
 │   │
-│   └── Module1_Introduction.md
+│   ├── Module1_Introduction.md
+│   └── Module2_Reflection_Design_Pattern.md
 |
 ├── DecisionTree/
 │   ├── DecisionTreeCn.md

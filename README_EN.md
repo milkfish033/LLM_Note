@@ -6,21 +6,26 @@ This repository is for recording notes during the learning process of **Large La
 
 Email: kerwinish@gmail.com
 
-🚩 Latest Update: 10/26/2025
+🚩 Latest Update: 10/28/2025
 
 ## Table of Contents
 ```
 LLM_NOTE/
+│
 ├── Agent_notes_of_Deeplearning_Andrew/
+│   │
 │   ├── AG_images/
 │   │   ├── module1/
-│   │   │   └── image.png
+│   │   │   ├── degree_of_autonomy.png
+│   │   │   ├── Planning.png
+│   │   │   └── Reflection.png
+│   │   │
+│   │   └── module2/
+│   │       ├── reflection_demo.png
+│   │       └── Reflection_with_external_feedback.png
 │   │
-│   └── Module1_Introduction.md
-|
-├── DecisionTree/
-│   ├── DecisionTreeCn.md
-│   └── DecisionTreeEn.md
+│   ├── Module1_Introduction.md
+│   └── Module2_Reflection_Design_Pattern.md
 │
 ├── Essay_reading/
 │   ├── Bert_note_cn.md
