@@ -1,5 +1,6 @@
 [中文](./LVLM_cn.md) |
 [English](./LVLM_en.md)
+
 **LVLM** stands for **Large Vision-Language Model**.  
 It refers to a class of AI models capable of **understanding both visual information (e.g., images, videos)** and **language information (e.g., text, speech)** simultaneously.
 

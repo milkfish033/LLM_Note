@@ -1,5 +1,6 @@
 [中文](./LVLM_cn.md) |
 [English](./LVLM_en.md)
+
 **LVLM** 是 **Large Vision-Language Model（大型视觉语言模型）** 的缩写。  
 它是一类能够 **同时理解视觉信息（如图像、视频）和语言信息（如文本、语音）** 的人工智能模型。
 
