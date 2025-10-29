@@ -52,6 +52,7 @@ Answer → Evaluate → Improve → Final Answer
 **GPT-5 Thinking Mode**:
 - Performs reasoning **within one answer**
 - No multi-pass self-correction loop
+- Trained based on certain patterns 
 
 **Key Difference:**
 | GPT-5 Thinking | Reflection Agent |
