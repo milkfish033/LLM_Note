@@ -31,3 +31,5 @@ Enable an LLM to call a tool (e.g., `get_current_time`) when a user asks a quest
 # 4. Code execution
 
 # 5. MCP
+
+MCP is a protocol 
