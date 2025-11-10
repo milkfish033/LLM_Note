@@ -168,9 +168,10 @@ This workflow is **multi-agent** — each **purple box represents an autonomous 
 
 ### **1. Linear Pipeline Structure**
 
+```
 researcher --> graphic designer --> writer 
   |__________________________________|
-
+```
 
 This pattern is simple and efficient when tasks clearly flow from one role to the next.
 
