@@ -16,8 +16,9 @@ class MHA(nn.Module):
         self.fc_v = nn.Linear(dimension_v, num_head * d_v)
         
         self.dropout = nn.Dropout(dropout)
-        self.fc_o = nn.Linear(num_head * d_v, d_o)
         self.softmax = nn.Softmax(dim=-1) # 对最后一维(n_k)做softmax
+        self.fc_o = nn.Linear(num_head * d_v, d_o)
+        
 
     def forward(self, q, k, v, mask):
         # q:(b, n_q, dimension_k)
@@ -31,24 +32,30 @@ class MHA(nn.Module):
         h = self.num_head
         
         # 线性映射 (Linear mapping)
-        # Fixed typo: '9' -> 'Q', 'g' -> 'q'
         Q = self.fc_q(q) # (b, n_q, h*d_k)
         K = self.fc_k(k) # (b, n_k, h*d_k)
         V = self.fc_v(v) # (b, n_v, h*d_v)
-        
+
+        # 把原来“挤在一起”的 ℎ ∗ 𝑑𝑘维，拆成 h 个头，每个头各自拥有 d_k 维
         # 变形+维度对齐到多头 (Reshape + align to multi-head): (b, h, n_*, d_*)
+        # 因为在多头 attention 中，我们希望的是：
+        # 对每一个 head，独立地算：
+        # Q_h: (b, n_q, d_k)
+        # K_h: (b, n_k, d_k)
+        # → scores_h: (b, n_q, n_k)
+        
         Q = Q.view(b, n_q, h, self.d_k).transpose(1, 2) # (b, h, n_q, d_k)
         K = K.view(b, n_k, h, self.d_k).transpose(1, 2) # (b, h, n_k, d_k)
         V = V.view(b, n_v, h, self.d_v).transpose(1, 2) # (b, h, n_v, d_v)
         
         # 注意力分数 (Attention Scores): (b, h, n_q, n_k)
-        # Fixed typo: 'math.sgrt' -> 'math.sqrt'
         scores = torch.matmul(Q, K.transpose(-1, -2)) / math.sqrt(self.d_k)
         
-        mask = mask.unsqueeze(1)
-        
         # mask中允许处为0，禁止处为 -inf (Allowed: 0, Forbidden: -inf)
-        scores = scores + mask 
+        if mask is not None:
+             ## 多头里 scores 是 (b, h, n_q, n_k)
+            mask = mask.unsqueeze(1) #(b, 1, n_q, n_k)
+            scores = scores + mask 
         
         attn = self.softmax(scores)
         attn = self.dropout(attn)
