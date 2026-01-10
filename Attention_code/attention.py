@@ -71,6 +71,7 @@ if __name__ == "__main__":
     dimension_v = 64
     d_k, d_v, d_o = 16, 16, 8
 
+    #如果自注意力，则 q = k = v = x
     q = torch.randn(batch, n_q, dimension_k)
     k = torch.randn(batch, n_k, dimension_k)
     v = torch.randn(batch, n_v, dimension_v)

@@ -75,10 +75,8 @@ n_q, n_k, n_v = 4, 4, 4
 dimension_q = dimension_k = 128
 dimension_v = 64
 
-# Fixed typo '16，16' (Chinese comma) to '16, 16'
 d_k, d_v, d_o = 16, 16, 8 
 
-# Fixed typo '9' to 'q'
 q = torch.randn(batch, n_q, dimension_q)
 k = torch.randn(batch, n_k, dimension_k)
 v = torch.randn(batch, n_v, dimension_v)
