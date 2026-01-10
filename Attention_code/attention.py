@@ -22,5 +22,27 @@ def attention(query, key, value, dropout = None):
     #multiply with value
     return torch.matmul(p_attn, value), p_attn
 
+
+#self-attention
+query = x * W_Q
+key = x * W_K
+value = x * W_V
+out, attn = attention(query, key, value, None)
+
+
+def mask_attention(query, key, value, dropout = None):
+    d_k = query.size(-1)
+    scores = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(d_k)
+    # 创建一个上三角矩阵，用于遮蔽未来信息。
+    # 先通过 full 函数创建一个 1 * seq_len * seq_len 的矩阵
+    mask = torch.full((1, args.max_seq_len, args.max_seq_len), float("-inf"))
+    # triu 函数的功能是创建一个上三角矩阵
+    mask = torch.triu(mask, diagonal=1)
+    # 此处的 scores 为计算得到的注意力分数，mask 为上文生成的掩码矩阵
+    scores = scores + mask[:, :seqlen, :seqlen]
+    scores = F.softmax(scores.float(), dim=-1).type_as(xq)
+    if dropout is not None:
+        p_attn = dropout(p_attn)
+    return torch.matmul(p_attn, value), p_attn
     
     
